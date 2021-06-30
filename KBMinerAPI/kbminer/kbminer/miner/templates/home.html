@@ -1,0 +1,20 @@
+
+<html>
+<head>
+<title>
+Python button script
+</title>
+</head>
+<body>
+{% if data %}
+{{data | safe}}
+{% endif %}
+<br><br>
+<form action="/external/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="document" required>
+<br><br>
+<input type="submit" value="Download">
+</form>
+</body>
+</html>
